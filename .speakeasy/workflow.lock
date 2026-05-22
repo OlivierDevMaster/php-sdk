@@ -1,0 +1,37 @@
+speakeasyVersion: 1.764.0
+sources:
+    Gando Partner API:
+        sourceNamespace: gando-partner-api
+        sourceRevisionDigest: sha256:000b120bf0d27f731efb01ef0a3a5f9c117c43dbed06d0491e7064a3f9d2f192
+        sourceBlobDigest: sha256:f852c0856f4879da09bc2e7c18fb870adf6ab7acb811e25e79f637ea363764d1
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    gando:
+        source: Gando Partner API
+        sourceNamespace: gando-partner-api
+        sourceRevisionDigest: sha256:000b120bf0d27f731efb01ef0a3a5f9c117c43dbed06d0491e7064a3f9d2f192
+        sourceBlobDigest: sha256:f852c0856f4879da09bc2e7c18fb870adf6ab7acb811e25e79f637ea363764d1
+        codeSamplesNamespace: gando-partner-api-php-code-samples
+        codeSamplesRevisionDigest: sha256:13e1c0c747c7d9df13a2358f134ae4377e5d12a4deb7d333becb572bc3c9dcc5
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Gando Partner API:
+            inputs:
+                - location: ../gando/partner.json
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/olivierdevmaster/workspace-1/gando-partner-api
+    targets:
+        gando:
+            target: php
+            source: Gando Partner API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/olivierdevmaster/workspace-1/gando-partner-api-php-code-samples
+                labelOverride:
+                    fixedValue: Php (SDK)
+                blocking: false
